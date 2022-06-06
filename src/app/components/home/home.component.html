@@ -1,0 +1,50 @@
+<div class="container">
+  <h4 class="text-success">Give The Answers To The Below Questions</h4>
+  <form action="#">
+
+    <div class="card border-success mb-8" style="max-width: 50rem;" *ngFor="let question of questions">
+      <div class="card-header">Question No : {{question.qid}}</div>
+      <div class="card-body">
+        <h4 class="card-title">{{question.question}}</h4>
+        <!-- Answer Options-->
+        <fieldset class="form-group">
+
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" (change)="saveAns(question.qid,'option1')"
+                name="qidans{{question.qid}}" id="optionsRadios1" value="option1" required>
+              {{question.option1}}
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" (change)="saveAns(question.qid,'option2')"
+                name="qidans{{question.qid}}" id="optionsRadios2" value="option2" required>
+              {{question.option2}}
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" (change)="saveAns(question.qid,'option3')"
+                name="qidans{{question.qid}}" id="optionsRadios3" value="option3" required>
+              {{question.option3}}
+            </label>
+          </div>
+          <div class="form-check">
+            <label class="form-check-label">
+              <input type="radio" class="form-check-input" (change)="saveAns(question.qid,'option4')"
+                name="qidans{{question.qid}}" id="optionsRadios4" value="option4" required>
+              {{question.option4}}
+            </label>
+          </div>
+        </fieldset>
+      </div>
+    </div>
+
+    <br>
+    <button type="submit" class="btn btn-primary" (click)="submitTest()">Submit Test</button>
+    <button type="reset" class="btn btn-danger mx-5" (click)="clear()">Clear Test</button>
+  </form>
+
+  <br><br>
+</div>

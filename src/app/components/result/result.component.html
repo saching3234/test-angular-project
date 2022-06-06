@@ -1,0 +1,114 @@
+
+    
+    <div class="container">
+        
+       <p>You Scored    {{scorePercentage}}  out of 100%</p>
+        <div class="progress">
+            <div class="progress-bar progress-bar-striped active" role="progressbar"
+            aria-valuenow="40" aria-valuemin="0" aria-valuemax="100"  [style.width]="scorePercentage">
+              {{scorePercentage}}
+            </div>
+          </div>
+        </div>
+    
+       <br>
+        <div class="container">
+    
+          <div class="row mx-1" *ngFor="let question of questions; let i=index ">
+        <div class="card border-success  col-6 "   >
+            <div class="card-header">(Correct Answer) Question No : {{question.qid}}</div>
+            <div class="card-body">
+              <h4 class="card-title">{{question.question}}</h4>
+             
+              <fieldset class="form-group">
+                
+                <div class="form-check " [style.background]="serversAns[i].answer==='option1'? 'green': ''"       >
+                  <label class="form-check-label ">
+                    <input type="radio" class="form-check-input "   name="qidans{{question.qid}}" id="optionsRadios1" value="option1" disabled>
+                    {{question.option1}}  
+                  </label>
+                </div>
+                <div class="form-check"[style.background]="serversAns[i].answer==='option2'? 'green': ''" >
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input"   name="qidans{{question.qid}}" id="optionsRadios2" value="option2" disabled>
+                    {{question.option2}}
+                  </label>
+                </div>
+                <div class="form-check" [style.background]="serversAns[i].answer==='option3'? 'green': ''" >
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input"  name="qidans{{question.qid}}" id="optionsRadios3" value="option3" disabled>
+                      {{question.option3}}
+                    </label>
+                  </div>
+                  <div class="form-check" [style.background]="serversAns[i].answer==='option4'? 'green': ''" >
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input"  name="qidans{{question.qid}}" id="optionsRadios4" value="option4" disabled>
+                      {{question.option4}}
+                    </label>
+                  </div>
+                
+              </fieldset>
+            
+            
+            </div>
+          
+        
+        
+        </div>
+        
+        
+    
+        <!--second card for user ansers-->
+        <div class="card border-success   col-6  " >
+            <div class="card-header">(User Submitted Answers) Question No : {{question.qid}}</div>
+            <div class="card-body">
+              <h4 class="card-title">{{question.question}}</h4>
+             <!-- Answer Options-->
+              <fieldset class="form-group">
+                
+                <div class="form-check " [style.background]="ans[i].answer=='option1'? 'yellow': ''"       >
+                  <label class="form-check-label ">
+                    <input type="radio" class="form-check-input "   name="qidans{{question.qid}}" id="optionsRadios1" value="option1" disabled>
+                    {{question.option1}}  
+                  </label>
+                </div>
+                <div class="form-check"[style.background]="ans[i].answer=='option2'? 'yellow': ''" >
+                  <label class="form-check-label">
+                    <input type="radio" class="form-check-input"   name="qidans{{question.qid}}" id="optionsRadios2" value="option2" disabled>
+                    {{question.option2}}
+                  </label>
+                </div>
+                <div class="form-check" [style.background]="ans[i].answer=='option3'? 'yellow': ''" >
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input"  name="qidans{{question.qid}}" id="optionsRadios3" value="option3" disabled>
+                      {{question.option3}}
+                    </label>
+                  </div>
+                  <div class="form-check" [style.background]="ans[i].answer=='option4'? 'yellow': ''" >
+                    <label class="form-check-label">
+                      <input type="radio" class="form-check-input"  name="qidans{{question.qid}}" id="optionsRadios4" value="option4" disabled>
+                      {{question.option4}}
+                    </label>
+                  </div>
+                
+              </fieldset>
+            
+            
+            </div>
+          
+        
+        
+        
+        
+        </div>
+        
+    
+       
+    
+    </div>
+        <br>
+       
+        
+        <br><br>  
+        </div>
+    
