@@ -11,11 +11,11 @@ export class TestServiceService {
 
  //method for getting the all Questions
  public getAllQuestions(){
-  return this.http.get("http://192.168.57.91:9090/getAllQuestions");
+  return this.http.get("http://localhost:9090/getAllQuestions");
 }
 
 getAllAnswers(){
-  return this.http.get("http://192.168.57.91:9090/getAllAnswers");
+  return this.http.get("http://localhost:9090/getAllAnswers");
 }
 
 

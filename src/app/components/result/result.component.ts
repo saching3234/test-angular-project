@@ -18,8 +18,9 @@ export class ResultComponent implements OnInit {
   constructor(private service:TestServiceService) { }
 
   ngOnInit(): void {    
-    //getting the all question from server
+    //setting the score to zero
     this.score=0;
+    //getting the all question from server
     let resp1=this.service.getAllQuestions();
     resp1.subscribe((data)=>this.questions=data);
 
@@ -32,8 +33,8 @@ export class ResultComponent implements OnInit {
   }
 
 
-
-  ngAfterViewChecked():void{
+//components lifecycle method 
+ngAfterViewChecked():void{
 //calculating the score
 this.markCal();
   }
@@ -45,6 +46,7 @@ this.markCal();
      this.score=0;
      this.scorePercentage='0'
      for(let i=0;i<this.serversAns.length;i++){
+      //checking the question no and answers 
        if(this.serversAns[i].qid===this.ans[i].qid&&this.serversAns[i].answer===this.ans[i].answer)
        this.score++;    
      
